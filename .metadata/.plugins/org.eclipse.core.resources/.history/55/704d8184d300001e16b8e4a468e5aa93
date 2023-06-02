@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+// This is a class that represents a collection of entries (array of entries)
+
+public class AddressBook {
+    private ArrayList<Entry> entries;
+
+    // Constructor
+    public AddressBook() {
+        entries = new ArrayList<>();
+    }
+
+    // Add an entry to the address book
+    public void addEntry(Entry entry) {
+        entries.add(entry);
+        System.out.println("Added new entry!");
+    }
+
+    // Remove an entry from the address book based on email address
+    public void removeEntry(String email) {
+    	for (Entry entry : entries) {
+          if (entry.getEmailAddress().equals(email)) {
+        	  entries.remove(entry);
+        	  System.out.println("Entry deleted\n");
+              return;
+          }
+      }
+    }
+    
+    //////////////////
+
+    // Search for entries based on a search parameter and query
+   // public void searchEntries(int searchType, String query) {
+      //  ArrayList<Entry> searchResults = new ArrayList<>();
+    
+    
+    ////////////////////
+        
+
+    // Print all entries in the address book
+    public void printAddressBook() {
+        if (entries.isEmpty()) {
+            System.out.println("Address Book is empty!");
+        } else {
+            for (Entry entry : entries) {
+                System.out.println("************\n" + entry + "\n************");
+            }
+        }
+    }
+
+    // Clear the address book
+    public void deleteAddressBook() {
+        entries.clear();
+        System.out.println("Address book cleared!");
+    }
+}
